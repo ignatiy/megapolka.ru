@@ -1,0 +1,406 @@
+<?php
+    loadClass('Image');    
+
+    $config = Config::getConfig('SITE');
+    
+    $home = !empty($config['HTTP_HOST']['VAL']) ? $config['HTTP_HOST']['VAL'] : '';
+    $logo = !empty($config['LOGO']['VAL']) ? $config['LOGO']['VAL'] : '';    
+    $logoSrc = Image::getSrc($logo);
+    $phone = !empty($config['PHONE']['VAL']) ? $config['PHONE']['VAL'] : '';    
+    $email = !empty($config['EMAIL']['VAL']) ? $config['EMAIL']['VAL'] : ''; 
+?>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Megapolka.ru</title>
+      <style type="text/css">
+         /* Client-specific Styles */
+         #outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
+         body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}
+         /* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+         .ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */
+         .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
+         #backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important;}
+         img {outline:none; text-decoration:none;border:none; -ms-interpolation-mode: bicubic;}
+         a img {border:none;}
+         .image_fix {display:block;}
+         p {margin: 0px 0px !important;}
+         
+         table td {border-collapse: collapse;}
+         table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
+         /*a {color: #e95353;text-decoration: none;text-decoration:none!important;}*/
+         /*STYLES*/
+         table[class=full] { width: 100%; clear: both; }
+         
+         /*################################################*/
+         /*IPAD STYLES*/
+         /*################################################*/
+         @media only screen and (max-width: 640px) {
+         a[href^="tel"], a[href^="sms"] {
+         text-decoration: none;
+         color: #ffffff; /* or whatever your want */
+         pointer-events: none;
+         cursor: default;
+         }
+         .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+         text-decoration: default;
+         color: #ffffff !important;
+         pointer-events: auto;
+         cursor: default;
+         }
+         table[class=devicewidth] {width: 440px!important;text-align:center!important;}
+         table[class=devicewidthinner] {width: 420px!important;text-align:center!important;}
+         table[class="sthide"]{display: none!important;}
+         img[class="bigimage"]{width: 420px!important;height:219px!important;}
+         img[class="col2img"]{width: 420px!important;height:258px!important;}
+         img[class="image-banner"]{width: 440px!important;height:106px!important;}
+         td[class="menu"]{text-align:center !important; padding: 0 0 10px 0 !important;}
+         td[class="logo"]{padding:10px 0 5px 0!important;margin: 0 auto !important;}
+         img[class="logo"]{padding:0!important;margin: 0 auto !important;}
+
+         }
+         /*##############################################*/
+         /*IPHONE STYLES*/
+         /*##############################################*/
+         @media only screen and (max-width: 480px) {
+         a[href^="tel"], a[href^="sms"] {
+         text-decoration: none;
+         color: #ffffff; /* or whatever your want */
+         pointer-events: none;
+         cursor: default;
+         }
+         .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+         text-decoration: default;
+         color: #ffffff !important; 
+         pointer-events: auto;
+         cursor: default;
+         }
+         table[class=devicewidth] {width: 280px!important;text-align:center!important;}
+         table[class=devicewidthinner] {width: 260px!important;text-align:center!important;}
+         table[class="sthide"]{display: none!important;}
+         img[class="bigimage"]{width: 260px!important;height:136px!important;}
+         img[class="col2img"]{width: 260px!important;height:160px!important;}
+         img[class="image-banner"]{width: 280px!important;height:68px!important;}
+         
+         }
+      </style>
+
+      
+   </head>
+<body>
+<div class="block">
+
+   <!-- Start of preheader -->
+   <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="preheader">
+   
+      <tbody>
+         <tr>
+            <td width="100%">
+               <table width="650" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                  <tbody>
+                     <!-- Spacing -->
+                     <tr>
+                        <td width="100%" height="5"></td>
+                     </tr>
+                     <!-- Spacing -->
+                     <tr>
+                        <td align="right" valign="middle" style="font-family: Helvetica, arial, sans-serif; font-size: 12px;color: #999999" st-content="preheader">
+                           Если вы не можете прочитать письмо, пожалуйста <a class="hlite" href="mailto:info@megapolka.ru" style="text-decoration: none; color: #0db9ea">сообщите нам об этом</a> 
+                        </td>
+                     </tr>
+                     <!-- Spacing -->
+                     <tr>
+                        <td width="100%" height="5"></td>
+                     </tr>
+                     <!-- Spacing -->
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- End of preheader -->
+</div>
+<div class="block">
+
+   <!-- start of header -->
+   <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="header">
+      <tbody>
+         <tr>
+            <td>
+               <table width="650" bgcolor="#D1F5FF" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" hlitebg="edit" shadow="edit">
+                  <tbody>
+                     <tr>
+                        <td>
+                           <!-- logo -->
+                           <table width="300" cellpadding="0" cellspacing="0" border="0" align="left" class="devicewidth">
+                              <tbody>
+                                 <tr>
+                                    <td valign="middle" width="270" style="padding: 10px 0 10px 20px;" class="logo">
+                                       <div class="imgpop">
+                                          <a href="https://megapolka.ru/"><img src="http://nstopt.ru/image/logo-megapolka.png" alt="logo" border="0" style="display:block; border:none; outline:none; text-decoration:none;" st-image="edit" class="logo"></a>
+                                       </div>
+
+
+
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <!-- End of logo -->
+                           <!-- menu -->
+                           <table width="280" cellpadding="0" cellspacing="0" border="0" align="right" class="devicewidth">
+
+                              <tbody>
+                                 <tr>
+                                    <td width="200" valign="middle" style="font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #ffffff;line-height: 24px; padding: 10px 0;" align="right" class="menu" st-content="menu">
+                                       <a href="https://megapolka.ru/" style="text-decoration: none; color: #3A879C; ">Megapolka.ru</a>
+                                       &nbsp;|&nbsp;
+                                       <a href="https://megapolka.ru/about" style="text-decoration: none; color: #3A879C; ">О комании</a>
+                                       &nbsp;|&nbsp;
+                                       <a href="https://megapolka.ru/catalog/AKCIYa!!!" style="text-decoration: none; color: #3A879C; ">Акция</a>
+
+
+				<div style="font-size: 20px; text-align: right">
+					<img style="margin-right: 5px;" src="http://nstopt.ru/image/phoness1.png"><b><a href="#" style=" color: #3A879C;">8 (800) 775-75-13</a></b>
+				</div>
+				<a href="mailto:info@megapolka.ru" style="font-weight: bold; cursor:pointer; color: #3A879C; text-align: right; text-decoration: underline; display:block;">info@megapolka.ru</a>
+			
+
+
+                                    </td>
+
+
+
+                                    <td width="20"></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <!-- End of Menu -->
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- end of header -->
+ </div><div class="block"> 
+   <!-- image + text -->
+   <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="bigimage">
+      <tbody>
+         <tr>
+            <td>
+               <table bgcolor="#ffffff" width="580" align="center" cellspacing="0" cellpadding="0" border="0" class="devicewidth" modulebg="edit">
+                  <tbody>
+                     <tr>
+                        <td width="100%" height="20"></td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <table width="540" align="center" cellspacing="0" cellpadding="0" border="0" class="devicewidthinner">
+                              <tbody>
+                                 <tr>
+                                    <!-- start of image -->
+                                    <td align="center">
+                                       <a target="_blank" href="https://megapolka.ru/"><img width="540" border="0" height="282" alt="" style="display:block; border:none; outline:none; text-decoration:none;" src="http://nstopt.ru/image/bigimage.png" class="bigimage"></a>
+                                    </td>
+                                 </tr>
+                                 <!-- end of image -->
+                               
+
+                                 <table style="width: 100%; font-family: Arial; font-size: 14px; color: #282828;" cellspacing="7">
+		
+		<tr>
+			<td colspan="3">
+				<div style="padding: 10px;">
+
+					<div style="margin: 30px 0 15px; font-size: 30px;text-shadow: #5dc8e5 0 0 10px; color: #413830; font-weight: 700; text-align: center;">Доброго времени суток!</div>
+
+
+
+
+					<div style="margin: 20px 0 30px;">
+						<p style="font-size: 17px; text-shadow: #5dc8e5 0 0 10px; color: #413830;"><span style="color: #12bfff;"></span> место под текст</p>
+
+						<p style="font-size: 17px; text-shadow: #5dc8e5 0 0 10px; color: #413830;"><span style="color: #12bfff;"></span> место под текст  </p>	
+
+						<p style="font-size: 17px; text-shadow: #5dc8e5 0 0 10px; color: #413830;"><span style="color: #12bfff;"></span> место под текст</p>
+
+				<!--		<p style="font-size: 16px; text-shadow: #5dc8e5 0 0 10px; color: #413830;"><span style="color: #12bfff;"></span> <strong><u> </u></strong></p> -->
+
+
+					</div>
+
+
+					<div style="margin: 20px 0 30px;text-align: center;">
+				<!--		<p style="font-size: 16px; color: #413830;"><span style="color: #12bfff;"><img src="https://nstopt.ru/image/simple.jpg"></span> Вконтакте - <strong><a href="https://vk.com/megapolka" style="color:#12bfff;">https://vk.com/megapolka</a></strong></p>
+
+						<p style="font-size: 16px; color: #413830;"><span style="color: #12bfff;"><img src="https://nstopt.ru/image/simple.jpg"></span> Одноклассники - <strong><a href="https://www.ok.ru/megapolka/" style="color:#12bfff;">https://ok.ru/group/megapolka</a></strong> </p>
+
+						<p style="font-size: 16px; color: #413830;"><span style="color: #12bfff;"><img src="https://nstopt.ru/image/simple.jpg"></span> Facebook - <strong><a href="https://www.facebook.com/megapolka.ru/" style="color:#12bfff;">https://www.facebook.com/megapolka.ru</a></strong> </p>  -->
+
+                        <p style="font-size: 17px;text-shadow: #5dc8e5 0 0 10px; color: #413830;"><span style="color: #12bfff;"></span> На сайте Вы найдёте:  </p>
+
+
+					<!--	<div style="margin: 20px; margin: 10px 15px; margin: 10px 15px 20px; margin: 10px 15px 20px 25px;">			
+
+						<p style="font-size: 15px; color: #413830;"><span style="color: #12bfff;"></span> -   Полезные лайфхаки для родителей;  </p>	
+
+						<p style="font-size: 15px; color: #413830;"><span style="color: #12bfff;"></span> -   Подборки игрушек к праздникам;</p>
+
+						<p style="font-size: 15px; color: #413830;"><span style="color: #12bfff;"></span> -   Новинки мультипликации;  </p>	
+
+						<p style="font-size: 15px; color: #413830;"><span style="color: #12bfff;"></span> -   Новости о скидках и акциях компании;</p>
+
+						<p style="font-size: 15px; color: #413830;"><span style="color: #12bfff;"></span> -   И ещё много чего интересного!</p>
+
+						<p style="font-size: 16px; color: #413830;"><span style="color: #12bfff;"></span> <strong><u> </u></strong></p>
+
+
+					</div> -->
+						
+					</div>
+
+					<table style="width: 100%; margin-bottom: 30px; text-align: center;">
+						<tr>
+							<td style="padding: 15px 0; width: 20%; vertical-align: top;">
+								<a href="https://megapolka.ru/catalog/trolls" style="display: inline-block; text-decoration: none;">
+									<img src="https://megapolka.ru/upload/images/2017-08/fb6c97addb2ef8c81b3c6100a0e240d8.png">
+									<div style="margin-top: 10px; font-size: 12px; color: #333; text-align: center;">TROLLS</div>
+								</a>
+							</td>
+							<td style="padding: 15px 0; width: 20%; vertical-align: top;">
+								<a href="https://megapolka.ru/catalog/FURREALFRIENDS" style="display: inline-block; text-decoration: none;">
+									<img src="https://megapolka.ru/upload/images/2017-08/234fb1f4ad51e22d774e279dc4dfb7bc.png">
+									<div style="margin-top: 10px; font-size: 12px; color: #333; text-align: center;">FurRealFriends</div>
+								</a>
+							</td>
+							<td style="padding: 15px 0; width: 20%; vertical-align: top;">
+								<a href="https://megapolka.ru/catalog/MARVEL_AVENGERS" style="display: inline-block; text-decoration: none;">
+									<img src="https://megapolka.ru/upload/images/2017-08/d53aa26658e118984df7a4d92228bcca.png">
+									<div style="margin-top: 10px; font-size: 12px; color: #333; text-align: center;">MARVEL Avengers</div>
+								</a>
+							</td>
+							<td style="padding: 15px 0; width: 20%; vertical-align: top;">
+								<a href="https://megapolka.ru/catalog/marvel-spider-man-titan-hero" style="display: inline-block; text-decoration: none;">
+									<img src="https://megapolka.ru/upload/images/2017-08/48c8bac68d78d75ac07b4ec41818c1af.png">
+									<div style="margin-top: 10px; font-size: 12px; color: #333; text-align: center;">MARVEL Spider-Man, Titan Hero"</div>
+								</a>
+							</td>
+							<td style="padding: 15px 0; width: 20%; vertical-align: top;">
+								<a href="https://megapolka.ru/catalog/my-little-pony--friendship-magic" style="display: inline-block; text-decoration: none;">
+									<img src="https://megapolka.ru/upload/images/2017-08/737a4fdf23c8e8ae17dde33810264351.png">
+									<div style="margin-top: 10px; font-size: 12px; color: #333; text-align: center;">MY LITLE PONY</div>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="padding: 15px 0; width: 20%; vertical-align: top;">
+								<a href="https://megapolka.ru/catalog/star-wars" style="display: inline-block; text-decoration: none;">
+									<img src="https://megapolka.ru/upload/images/2017-08/240ca5dfba640374f422cde4789d1e3a.png">
+									<div style="margin-top: 10px; font-size: 12px; color: #333; text-align: center;">Star Wars</div>
+								</a>
+							</td>
+							<td style="padding: 15px 0; width: 20%; vertical-align: top;">
+								<a href="https://megapolka.ru/catalog/NERF_N_STRIKE_ELITE" style="display: inline-block; text-decoration: none;">
+									<img src="https://megapolka.ru/upload/images/2017-08/c50b9edfc36d9d25464ca05bfc1bd1d1.png">
+									<div style="margin-top: 10px; font-size: 12px; color: #333; text-align: center;">NERF N STRIKE ELITE</div>
+								</a>
+							</td>
+							<td style="padding: 15px 0; width: 20%; vertical-align: top;">
+								<a href="https://megapolka.ru/catalog/PALACE_PETS_DISNEY_KOROLEVSKIE_PITOMTSY" style="display: inline-block; text-decoration: none;">
+									<img src="https://megapolka.ru/upload/images/2017-08/e862b94829a0f4217ffeb2f0df78e812.png">
+									<div style="margin-top: 10px; font-size: 12px; color: #333; text-align: center;">PALACE PETS DISNEY</div>
+								</a>
+							</td>
+							<td style="padding: 15px 0; width: 20%; vertical-align: top;">
+								<a href="https://megapolka.ru/catalog/disney-moana" style="display: inline-block; text-decoration: none;">
+									<img src="https://megapolka.ru/upload/images/2017-08/3ea94af54b6eae3ead363f07839f45b3.png">
+									<div style="margin-top: 10px; font-size: 12px; color: #333; text-align: center;">Disney MOANA</div>
+								</a>
+							</td>
+							<td style="padding: 15px 0; width: 20%; vertical-align: top;">
+								<a href="https://megapolka.ru/catalog/transformers" style="display: inline-block; text-decoration: none;">
+									<img src="https://megapolka.ru/upload/images/2017-08/45e85d5223bedeca90608e0989b75296.png">
+									<div style="margin-top: 10px; font-size: 12px; color: #333; text-align: center;">Transformers</div>
+								</a>
+							</td>
+						</tr>
+					</table>
+
+					<div style="margin-bottom: 40px; text-align: left;">
+						<p style="font-size: 16px; font-style: oblique ;text-shadow: #5dc8e5 0 0 10px; color: #413830;"><span style="color: #12bfff;"></span> Наша сова рада встречать Вас на Мегаполке :)</p>
+
+
+
+
+
+    <div style="margin: 15px; text-align: center;">
+		
+
+		<div style="margin: 10px; text-align: center;"><a href="http://megapolka.ru"><img src="https://nstopt.ru/image/s21.jpg"></a></div>
+			
+
+
+
+
+	</div>
+
+
+
+
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+ <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="header">
+      <tbody>
+         <tr>
+            <td>
+               <table width="650" bgcolor="#0A1E24" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" hlitebg="edit" shadow="edit">
+                  <tbody>
+                     <tr>
+                        <td>
+                          
+                           <!-- menu -->
+                          
+
+		
+		
+
+		
+            <div style="margin: 15px; text-align:center;">
+
+<p style="padding: 17px; font-size: 12px; color: #fff;">
+			© 2017, megapolka.ru. Все права защищены
+		</p> 
+
+<a href="https://www.instagram.com/megapolka.ru/"><img alt="in.png" src="http://nstopt.ru/upload/images/2016-08/in.png" style="color:rgb(40,40,40);font-family:Arial;font-size:14px;text-align:center;" /></a>
+
+<a href="https://vk.com/megapolka"><img alt="vk.png" src="http://nstopt.ru/upload/images/2016-08/vk.png" style="color:rgb(40,40,40);font-family:Arial;font-size:14px;text-align:center;" /></a>
+
+<a href="https://ok.ru/group/52780521095315/"><img alt="ok.png" src="http://nstopt.ru/upload/images/2016-08/ok.png" style="color:rgb(40,40,40);font-family:Arial;font-size:14px;text-align:center;" /></a>
+
+<a href="https://www.facebook.com/megapolka.ru/"><img alt="fb.png" src="http://nstopt.ru/upload/images/2016-08/fb.png" style="color:rgb(40,40,40);font-family:Arial;font-size:14px;text-align:center;" /></a>  
+    	
+    		<p style="padding: 17px; font-size: 12px; color: #fff;">
+			Если вы хотите отказаться от получения рассылки, перейдите по ссылке 
+			<a class="hlite" href="https://nstopt.ru/API/?TOKEN=FgT6TGdrt5dFsdas87Vgjk&command=unSubscribe&EMAIL=<?=$fields['TO']?>" style="text-decoration: none; color: #0db9ea">отписаться</a> </p> 
+			
+		
+		
+    		</div>
+  			
+
+
+	</div>
+                            <!--  </tbody>-->
+                        <!--   </table> -->
+
+</div>
+	</div>
+</body> 
+</html>
